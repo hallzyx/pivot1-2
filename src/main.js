@@ -12,11 +12,17 @@ import {Avatar, Button, Card, Drawer, Menu, Menubar, SelectButton, Toolbar, Tool
 
 const app = createApp(App);
 
-app.use(PrimeVue,
+app
+    .use(router)
+    .use(i18n)
+    .use(PrimeVue,
     {
             ripple: false,
             theme:{
                 preset: Aura,
+               options:{
+                    darkModeSelector: false,
+               }
                 }
             }
         )
@@ -30,6 +36,5 @@ app.use(PrimeVue,
     .component('pv-toolbar', Toolbar)
     .component('pv-tooltip', Tooltip)
     .component('pv-image', Image)
-    .use(router)
-    .use(i18n)
+
     .mount('#app');
